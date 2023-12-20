@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vishnu lawda hai ?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            background: antiquewhite;
+        }
+
+        .container {
+            width: 450px;
+            border: 1px solid antiquewhite;
+            padding: 30px;
+            box-shadow: 0 0 10px #ccc;
+            border-radius: 10px;
+            margin: 30px auto;
+            text-align: center;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            background: #fff;
+        }
+
+        #name,
+        #btn {
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            outline: none;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px #ccc;
+            margin: 10px 0 40px;
+        }
+
+        #btn {
+            background: #169416;
+            color: white;
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            background: #167116;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" id="frm">
+            <input type="text" id="name" placeholder="Enter Your Name to Check You are Lawda" autocomplete="off">
+            <button id="btn">Check</button>
+            <h1 id="title">Type Your Name</h1>
+        </form>
+
+    </div>
+
+    <script>
+        let title = document.getElementById("title")
+        let inp = document.getElementById('name');
+        let btn = document.getElementById('btn')
+        let form = document.getElementById('frm')
+        frm.onsubmit = function () {
+            let val = inp.value;
+            let vall = val.toUpperCase()
+            if (vall != '') {
+                if (vall == "RAJ" || vall == "KHERAJ" || vall == "KHERAJ SUTHAR" || vall == "K.S.JANGID" || inp.value == "KHERAJ JANGID" ||vall=="LAXMAN") {
+                    title.innerHTML = `😎  ${inp.value} is Not lawda`
+                }
+                else if (vall == "VISHNU" || vall == "VINIYA" || vall == "VISHNU JANGID" || vall == "VINIYO" || vall == "VISHNU SUTHAR") {
+                    title.innerHTML = `🙂 Yes ${inp.value} is lawda,<br/>Landu,MadarChod,<br/>Chutiya,Gandu etc.`;
+                }
+                else {
+                    title.innerHTML = `🙂 Yes ${inp.value} is Only lawda`;
+                }
+            } else {
+                title.innerHTML="Dafol Enter Your Name"
+            }
+            return false;
+        }
+        inp.onclick = function () {
+            inp.value = '';
+            title.innerHTML = "Type Your Name"
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>
